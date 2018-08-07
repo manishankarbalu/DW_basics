@@ -1,0 +1,25 @@
+group 'com.shankar'
+version '0.0.1-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+
+task allDeps(type: DependencyReportTask) {
+}
+
+dependencies {
+    compile group: 'io.dropwizard', name: 'dropwizard-core', version: '1.3.5'
+    compile group: 'io.dropwizard', name: 'dropwizard-jdbi', version: '1.3.5'
+    compile group: 'io.dropwizard', name: 'dropwizard-hibernate', version: '1.3.5'
+    testCompile group: 'io.dropwizard', name: 'dropwizard-testing', version: '1.3.5'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.12'
+    testCompile group: 'org.assertj', name: 'assertj-core', version: '3.10.0'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
+}
