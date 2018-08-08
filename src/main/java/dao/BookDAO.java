@@ -1,5 +1,6 @@
 package dao;
 
+import api.Author;
 import api.Book;
 import io.dropwizard.hibernate.AbstractDAO;
 import org.hibernate.SessionFactory;
@@ -28,9 +29,9 @@ public class BookDAO extends AbstractDAO<Book> {
         return persist(book);
     }
 
-    public List<Book> getBookByAuthId(String id){
+    public List<Book> getBookByAuthId(Author author){
         TypedQuery<Book> query = currentSession().getNamedQuery("Get_Book_By_AuthID");
-        query.setParameter("authId",id);
+        query.setParameter("author",author);
         return (List<Book>) query.getResultList();
     }
 

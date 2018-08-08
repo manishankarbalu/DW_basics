@@ -39,7 +39,7 @@ public class App extends Application<AppConfiguration> {
 
         final BookDAO bookDAO = new BookDAO(hibernate.getSessionFactory());
         System.out.println(bookDAO);
-        final BookResource bookResource =new BookResource(bookDAO);
+        final BookResource bookResource =new BookResource(bookDAO,authordao);
         System.out.println(bookResource);
         environment.jersey().register(bookResource);
 

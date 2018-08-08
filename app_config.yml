@@ -14,9 +14,11 @@ database:
     # the username
     user: root
     # the password
-    password:
+    password: Flipkart@123
     # the JDBC URL; the database
-    url: jdbc:mysql://localhost:3306/trial
+    url: jdbc:mysql://localhost:3306/trial1
 
     properties:
-      hibernate.dialect: org.hibernate.dialect.MySQLInnoDBDialect
+      hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+      hibernate.hbm2ddl.auto: update
+      hibernate.show_sql: true

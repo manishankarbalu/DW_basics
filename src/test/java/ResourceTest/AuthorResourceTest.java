@@ -19,12 +19,12 @@ public class AuthorResourceTest {
             .addResource(new AuthorResource(dao))
             .build();
 
-    private final Author author = new Author("001","Shankar");
+    private final Author author = new Author(null,1,"Shankar");
 
     @Before
     public void setup() {
 
-        when(dao.findById(eq("001"))).thenReturn(author);
+        when(dao.findById(eq(1))).thenReturn(author);
     }
 
     @Test
@@ -35,7 +35,7 @@ public class AuthorResourceTest {
                 .isEqualTo(author);
         System.out.println("\nExpected : "+ author.toString());
         System.out.println("Actual : "+ responseAuthor.toString());
-        verify(dao).findById("001");
+        verify(dao).findById(1);
     }
 
 }

@@ -8,22 +8,22 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class BookTest {
     private static final ObjectMapper MAPPER = Jackson.newObjectMapper();
-
+    private final Author author = new Author(null,1,"Shankar");
+    final Book expectedBook = new Book(null,21,"Testing Book",author,1);
     @Test
     public void serializesToJSON() throws Exception {
-        final Book expectedBook = new Book("b201","book201","004",4);
 
         final String expected = MAPPER.writeValueAsString(
-                MAPPER.readValue("{\"bookId\":\"b201\",\"bookName\":\"book201\",\"authId\":\"004\",\"rating\":4}", Book.class));
+                MAPPER.readValue("{\"bookId\":21,\"bookName\":\"Testing Book\",\"author\":{\"authId\":1,\"authName\":\"Shankar\"},\"rating\":1}", Book.class));
 
         assertThat(MAPPER.writeValueAsString(expectedBook)).isEqualTo(expected);
     }
 
     @Test
     public void deserializesFromJSON() throws Exception {
-        final Book book = new Book("b201","book201","004",4);
-        assertThat(MAPPER.readValue("{\"bookId\":\"b201\",\"bookName\":\"book201\",\"authId\":\"004\",\"rating\":4}", Book.class))
-                .isEqualTo(book);
+
+        assertThat(MAPPER.readValue("{\"bookId\":21,\"bookName\":\"Testing Book\",\"author\":{\"authId\":1,\"authName\":\"Shankar\"},\"rating\":1}", Book.class))
+                .isEqualTo(expectedBook);
     }
 
 }

@@ -13,7 +13,7 @@ public class AuthorTest {
 
     @Test
     public void serializesToJSON() throws Exception {
-        final Author expectedAuth = new Author("101", "vaibhav");
+        final Author expectedAuth = new Author(null,101, "vaibhav");
 
         final String expected = MAPPER.writeValueAsString(
                 MAPPER.readValue("{\"authId\":\"101\",\"authName\":\"vaibhav\"}", Author.class));
@@ -23,7 +23,7 @@ public class AuthorTest {
 
     @Test
     public void deserializesFromJSON() throws Exception {
-        final Author person = new Author("102", "archan");
+        final Author person = new Author(null,102, "archan");
         assertThat(MAPPER.readValue("{\"authId\":\"102\",\"authName\":\"archan\"}", Author.class))
                 .isEqualTo(person);
     }

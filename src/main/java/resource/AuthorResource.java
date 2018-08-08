@@ -3,11 +3,12 @@ package resource;
 import api.Author;
 import dao.AuthorDAO;
 import io.dropwizard.hibernate.UnitOfWork;
+import org.hibernate.FlushMode;
 
 import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
+import java.net.URISyntaxException;
 import java.util.List;
 
 @Path("/author")
@@ -21,6 +22,7 @@ public class AuthorResource {
         this.authordao = authordao;
     }
 
+    private Author a =new Author(3L,1,"mani");
     @GET
     @Path("/all/")
     @UnitOfWork
@@ -31,23 +33,33 @@ public class AuthorResource {
     @GET
     @Path("/{id}")
     @UnitOfWork
-    public Author get(@PathParam("id") String id){
+    public Author get(@PathParam("id") Integer id){
         return authordao.findById(id);
     }
 
     @POST
-    @UnitOfWork
-    public Author add(@Valid Author author){
-        Author newAuther = authordao.insert(author);
-        return newAuther;
-        //return Response.ok(authordao.insert(author)).build();
+    @UnitOfWork(transactional = false)
+    public Author add(@Valid Author author) {
+
+//        Author newAuther = authordao.insert(author);
+//        return newAuther;
+        try {
+            Author newAuther = authordao.insert(author);
+            return newAuther;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e);
+            return new Author(0L,404,"Duplicate AuthID found");
+        }
+//        return Response.ok(authordao.insert(author)).build();
     }
 
     @PUT
     @Path("/{id}")
     @UnitOfWork
-    public Author update(@PathParam("id") String id, @Valid Author author) {
-        author=author.setAuthId(id);
+    public Author update(@PathParam("id") Integer id, @Valid Author author) {
+        author.setAuthId(id);
         authordao.update(author);
         return author;
     }
@@ -55,7 +67,7 @@ public class AuthorResource {
     @DELETE
     @Path("/{id}")
     @UnitOfWork
-    public String delete(@PathParam("id") String id) {
+    public String delete(@PathParam("id") Integer id) {
         authordao.delete(authordao.findById(id));
         return "{\"delete\" :\"successfull\"}";
     }

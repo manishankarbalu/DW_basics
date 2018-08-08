@@ -1,6 +1,9 @@
 package resource;
 
+import api.Author;
 import api.Book;
+import api.CreateBookRequest;
+import dao.AuthorDAO;
 import dao.BookDAO;
 import io.dropwizard.hibernate.UnitOfWork;
 
@@ -14,9 +17,10 @@ import java.util.List;
 public class BookResource  {
 
     BookDAO bookDAO;
+    AuthorDAO authorDAO;
 
-    public BookResource (BookDAO bookDAO){
-        this.bookDAO=bookDAO;
+    public BookResource (BookDAO bookDAO,AuthorDAO authorDAO){
+        this.bookDAO=bookDAO;this.authorDAO=authorDAO;
     }
 
     @GET
@@ -28,14 +32,17 @@ public class BookResource  {
 
     @POST
     @UnitOfWork
-    public Book add(@Valid Book book){
+    public Book add(@Valid CreateBookRequest req){
+        Author author = authorDAO.findById(req.getAuthId());
+        Book book = new Book(null,req.getBookId(),req.getBookName(),author,req.getRating());
         Book newBook = bookDAO.insert(book);
         return newBook;
     }
 
     @GET
-    @UnitOfWork public List<Book> getBooksByAuthId(@QueryParam("authId") String id){
-        return bookDAO.getBookByAuthId(id);
+    @UnitOfWork public List<Book> getBooksByAuthId(@QueryParam("authId") Integer id){
+        Author author = authorDAO.findById(id);
+        return bookDAO.getBookByAuthId(author);
     }
 
     @GET
