@@ -38,37 +38,27 @@ public class AuthorResource {
     }
 
     @POST
-    @UnitOfWork(transactional = false)
+    @UnitOfWork()
     public Author add(@Valid Author author) {
 
-//        Author newAuther = authordao.insert(author);
-//        return newAuther;
-        try {
-            Author newAuther = authordao.insert(author);
+        Author newAuther = authordao.insert(author);
             return newAuther;
-        }
-        catch (Exception e)
-        {
-            System.out.println(e);
-            return new Author(0L,404,"Duplicate AuthID found");
-        }
-//        return Response.ok(authordao.insert(author)).build();
     }
 
-    @PUT
-    @Path("/{id}")
-    @UnitOfWork
-    public Author update(@PathParam("id") Integer id, @Valid Author author) {
-        author.setAuthId(id);
-        authordao.update(author);
-        return author;
-    }
+//    @PUT
+//    @Path("/{id}")
+//    @UnitOfWork
+//    public Author update(@PathParam("id") Integer id, @Valid Author author) {
+//        author.setAuthId(id);
+//        authordao.update(author);
+//        return author;
+//    }
 
     @DELETE
     @Path("/{id}")
     @UnitOfWork
     public String delete(@PathParam("id") Integer id) {
         authordao.delete(authordao.findById(id));
-        return "{\"delete\" :\"successfull\"}";
+        return "{\"delete\" :\"successfull\"}\t";
     }
 }

@@ -34,7 +34,7 @@ public class BookResource  {
     @UnitOfWork
     public Book add(@Valid CreateBookRequest req){
         Author author = authorDAO.findById(req.getAuthId());
-        Book book = new Book(null,req.getBookId(),req.getBookName(),author,req.getRating());
+        Book book = new Book(null, req.getBookId(), req.getBookName(), author, req.getRating());
         Book newBook = bookDAO.insert(book);
         return newBook;
     }

@@ -39,7 +39,7 @@ public class AuthorDAO extends AbstractDAO<Author> {
         return persist(author);
 
     }
-    public void update(Author author){
-        currentSession().saveOrUpdate(author);
-    }
+//    public void update(Author author){
+//        currentSession().saveOrUpdate(author);
+//    }
 }

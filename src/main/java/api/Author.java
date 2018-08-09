@@ -3,6 +3,7 @@ package api;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -29,6 +30,7 @@ public class Author {
 
     @NotNull
     @Column(name = "authName", nullable = false)
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
     @JsonProperty
     private String authName;
 
