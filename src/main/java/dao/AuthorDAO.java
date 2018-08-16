@@ -1,6 +1,7 @@
 package dao;
 
 import api.Author;
+import com.google.inject.Inject;
 import io.dropwizard.hibernate.AbstractDAO;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
@@ -9,7 +10,7 @@ import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @SuppressWarnings("deprecation")
-public class AuthorDAO extends AbstractDAO<Author> {
+public class AuthorDAO extends AbstractDAO<Author> { //implements GenericDAO<Author>
 
 
     /**
@@ -17,6 +18,7 @@ public class AuthorDAO extends AbstractDAO<Author> {
      *
      * @param sessionFactory a session provider
      */
+    @Inject
     public AuthorDAO(@NotNull SessionFactory sessionFactory) {
         super(sessionFactory);
     }

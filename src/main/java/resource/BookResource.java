@@ -3,9 +3,11 @@ package resource;
 import api.Author;
 import api.Book;
 import api.CreateBookRequest;
-import dao.AuthorDAO;
-import dao.BookDAO;
+import com.google.inject.Inject;
 import io.dropwizard.hibernate.UnitOfWork;
+import service.AuthorService;
+import service.BookService;
+
 
 import javax.validation.Valid;
 import javax.ws.rs.*;
@@ -16,39 +18,44 @@ import java.util.List;
 @Produces(MediaType.APPLICATION_JSON)
 public class BookResource  {
 
-    BookDAO bookDAO;
-    AuthorDAO authorDAO;
+    //BookDAO bookDAO;
+    //AuthorDAO authorDAO;
+    private final AuthorService authorService;
+    private final BookService bookService;
 
-    public BookResource (BookDAO bookDAO,AuthorDAO authorDAO){
-        this.bookDAO=bookDAO;this.authorDAO=authorDAO;
+    @Inject
+    public BookResource(AuthorService authorService, BookService bookService) {
+        this.authorService = authorService;
+        this.bookService = bookService;
     }
+
 
     @GET
     @Path("/all/")
     @UnitOfWork
     public List<Book> getAll(){
-        return bookDAO.getAll();
+        return bookService.getAll();
     }
 
     @POST
     @UnitOfWork
     public Book add(@Valid CreateBookRequest req){
-        Author author = authorDAO.findById(req.getAuthId());
+        Author author = authorService.findById(req.getAuthId());
         Book book = new Book(null, req.getBookId(), req.getBookName(), author, req.getRating());
-        Book newBook = bookDAO.insert(book);
+        Book newBook = bookService.insert(book);
         return newBook;
     }
 
     @GET
     @UnitOfWork public List<Book> getBooksByAuthId(@QueryParam("authId") Integer id){
-        Author author = authorDAO.findById(id);
-        return bookDAO.getBookByAuthId(author);
+        Author author = authorService.findById(id);
+        return bookService.getBookByAuthId(author);
     }
 
     @GET
     @Path("/{rating}")
     @UnitOfWork
     public List<Book> getBookGtRating(@PathParam("rating") int rating){
-        return bookDAO.getBookGtRating(rating);
+        return bookService.getBookGtRating(rating);
     }
 }

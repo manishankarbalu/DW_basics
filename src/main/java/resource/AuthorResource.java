@@ -1,14 +1,15 @@
 package resource;
 
 import api.Author;
-import dao.AuthorDAO;
+import com.google.inject.Inject;
 import io.dropwizard.hibernate.UnitOfWork;
-import org.hibernate.FlushMode;
+import service.AuthorService;
+
+
 
 import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import java.net.URISyntaxException;
 import java.util.List;
 
 @Path("/author")
@@ -16,32 +17,38 @@ import java.util.List;
 @Produces({MediaType.APPLICATION_JSON})
 public class AuthorResource {
 
-    AuthorDAO authordao;
+    //AuthorDAO authordao;
 
-    public AuthorResource(AuthorDAO authordao) {
-        this.authordao = authordao;
+    private final AuthorService authorService;
+
+    @Inject
+    public AuthorResource(AuthorService authorService) {
+        this.authorService = authorService;
     }
 
-    private Author a =new Author(3L,1,"mani");
+    //private Author a =new Author(3L,1,"mani");
+
+
+
     @GET
     @Path("/all/")
     @UnitOfWork
     public List<Author> getAll(){
-        return authordao.getAll();
+        return authorService.getAll();
     }
 
     @GET
     @Path("/{id}")
     @UnitOfWork
     public Author get(@PathParam("id") Integer id){
-        return authordao.findById(id);
+        return authorService.findById(id);
     }
 
     @POST
     @UnitOfWork()
     public Author add(@Valid Author author) {
 
-        Author newAuther = authordao.insert(author);
+        Author newAuther = authorService.insert(author);
             return newAuther;
     }
 
@@ -58,7 +65,7 @@ public class AuthorResource {
     @Path("/{id}")
     @UnitOfWork
     public String delete(@PathParam("id") Integer id) {
-        authordao.delete(authordao.findById(id));
+        authorService.delete(authorService.findById(id));
         return "{\"delete\" :\"successfull\"}\t";
     }
 }

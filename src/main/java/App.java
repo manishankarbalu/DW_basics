@@ -1,6 +1,8 @@
 import api.Author;
 import api.Book;
 import api.DuplicateExceptionMapper;
+import com.google.inject.Stage;
+import com.hubspot.dropwizard.guice.GuiceBundle;
 import dao.BookDAO;
 import dao.AuthorDAO;
 import health.DatabaseHealthCheck;
@@ -33,25 +35,25 @@ public class App extends Application<AppConfiguration> {
     @Override
     public void run(AppConfiguration configuration, Environment environment) throws ClassNotFoundException{
 
-        /** Add author, dao and its resource to bind with main app thread **/
-        final AuthorDAO authordao = new AuthorDAO(hibernate.getSessionFactory());
-        System.out.println(authordao);
-        final AuthorResource authorResource = new AuthorResource(authordao);
-        System.out.println(authorResource);
-        environment.jersey().register(authorResource);
-
-        /** Add book, dao and its resource to bind with main app thread **/
-        final BookDAO bookDAO = new BookDAO(hibernate.getSessionFactory());
-        System.out.println(bookDAO);
-        final BookResource bookResource =new BookResource(bookDAO,authordao);
-        System.out.println(bookResource);
-        environment.jersey().register(bookResource);
-
-        /** Bind the Custom exception with the main app thread **/
-        environment.jersey().register(DuplicateExceptionMapper.class);
-
-        /**  register database healthcheck **/
-        environment.healthChecks().register("mysql", new DatabaseHealthCheck(configuration.getDatabase()));
+//        /** Add author, dao and its resource to bind with main app thread **/
+//        final AuthorDAO authordao = new AuthorDAO(hibernate.getSessionFactory());
+//        System.out.println(authordao);
+//        final AuthorResource authorResource = new AuthorResource(authordao);
+//        System.out.println(authorResource);
+//        environment.jersey().register(authorResource);
+//
+//        /** Add book, dao and its resource to bind with main app thread **/
+//        final BookDAO bookDAO = new BookDAO(hibernate.getSessionFactory());
+//        System.out.println(bookDAO);
+//        final BookResource bookResource =new BookResource(bookDAO,authordao);
+//        System.out.println(bookResource);
+//        environment.jersey().register(bookResource);
+//
+//        /** Bind the Custom exception with the main app thread **/
+//        environment.jersey().register(DuplicateExceptionMapper.class);
+//
+//        /**  register database healthcheck **/
+//        environment.healthChecks().register("mysql", new DatabaseHealthCheck(configuration.getDatabase()));
         //final hai_res resource = new hai_res(configuration.getGreeting(),configuration.getName());
         //final healthCheck hc = new healthCheck(configuration.getGreeting());
         //environment.healthChecks().register("greeting", hc);
@@ -66,7 +68,17 @@ public class App extends Application<AppConfiguration> {
 
     @Override
     public void initialize(Bootstrap<AppConfiguration> bootstrap) {
+
+        bootstrap.addBundle(hibernate);
+
+        GuiceBundle<AppConfiguration> guiceBundle = GuiceBundle.<AppConfiguration>newBuilder()
+                .addModule(new AppModule())
+                .addModule(new HibernateModule(hibernate))
+                .setConfigClass(AppConfiguration.class)
+                .build(Stage.DEVELOPMENT);
+
+        bootstrap.addBundle(guiceBundle);
+
         /** inititalize hibernate when the app starts **/
-    bootstrap.addBundle(hibernate);
     }
 }
