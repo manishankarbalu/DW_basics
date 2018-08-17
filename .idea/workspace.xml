@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dc4f9860-09be-483c-a8a4-41fc59781b91" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/ResourceTest/AuthorResourceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/ResourceTest/AuthorResourceTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/ResourceTest/BookResourceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/ResourceTest/BookResourceTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ResourceTest/AuthorResourceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ResourceTest/AuthorResourceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ResourceTest/BookResourceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ResourceTest/BookResourceTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="dc4f9860-09be-483c-a8a4-41fc59781b91" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -25,21 +19,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AuthorResource.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/resource/AuthorResource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="43" selection-start-line="43" selection-end-line="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#530#531#0" expanded="true" />
-                <element signature="e#580#581#0" expanded="true" />
-                <element signature="e#902#903#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AuthorServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/service/AuthorServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -59,17 +38,26 @@
       <file leaf-file-name="AuthorResourceTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/ResourceTest/AuthorResourceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
+            <state relative-caret-position="195">
+              <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthorTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/api/AuthorTest.java">
+      <file leaf-file-name="BookResourceTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ResourceTest/BookResourceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="-313">
+              <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BookResource.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/resource/BookResource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -460,22 +448,22 @@
               <item name="ai_a" type="b2602c69:ProjectViewProjectNode" />
               <item name="DW_basics" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
               <item name="ai_a" type="b2602c69:ProjectViewProjectNode" />
               <item name="DW_basics" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ai_a" type="b2602c69:ProjectViewProjectNode" />
               <item name="DW_basics" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ResourceTest" type="462c0819:PsiDirectoryNode" />
+              <item name="resource" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -697,21 +685,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AuthorResourceTest - 2018.08.17 at 17h 12m 07s.xml">
-      <configuration name="AuthorResourceTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AuthorResourceTest - 2018.08.17 at 17h 14m 13s.xml">
-      <configuration name="AuthorResourceTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AuthorResourceTest - 2018.08.17 at 17h 15m 02s.xml">
-      <configuration name="AuthorResourceTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AuthorResourceTest - 2018.08.17 at 17h 15m 16s.xml">
-      <configuration name="AuthorResourceTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AuthorResourceTest - 2018.08.17 at 17h 20m 42s.xml">
-      <configuration name="AuthorResourceTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="AuthorResourceTest - 2018.08.17 at 17h 20m 48s.xml">
       <configuration name="AuthorResourceTest" configurationId="JUnit" />
     </history-entry>
@@ -727,6 +700,21 @@
     <history-entry file="AuthorTest - 2018.08.17 at 17h 26m 00s.xml">
       <configuration name="AuthorTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="AuthorResourceTest - 2018.08.17 at 17h 39m 47s.xml">
+      <configuration name="AuthorResourceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AuthorResourceTest - 2018.08.17 at 17h 40m 06s.xml">
+      <configuration name="AuthorResourceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BookResourceTest - 2018.08.17 at 17h 40m 44s.xml">
+      <configuration name="BookResourceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BookResourceTest - 2018.08.17 at 17h 41m 49s.xml">
+      <configuration name="BookResourceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BookResourceTest - 2018.08.17 at 17h 42m 27s.xml">
+      <configuration name="BookResourceTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -739,7 +727,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32969698" />
@@ -749,12 +736,12 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50072676" side_tool="true" weight="0.329602" />
       <window_info anchor="right" id="Maven Projects" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49927327" visible="true" weight="0.36848485" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49927327" weight="0.36848485" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32969698" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32969698" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2846924" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2846924" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32969698" />
       <window_info anchor="right" id="Gradle" order="5" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -869,31 +856,31 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/ResourceTest/AuthorResourceTest.java</url>
-          <line>43</line>
+          <line>41</line>
           <properties />
           <option name="timeStamp" value="108" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/ResourceTest/AuthorResourceTest.java</url>
-          <line>51</line>
+          <line>49</line>
           <properties />
           <option name="timeStamp" value="109" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/ResourceTest/AuthorResourceTest.java</url>
-          <line>52</line>
+          <line>50</line>
           <properties />
           <option name="timeStamp" value="110" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/ResourceTest/AuthorResourceTest.java</url>
-          <line>60</line>
+          <line>58</line>
           <properties />
           <option name="timeStamp" value="111" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/ResourceTest/AuthorResourceTest.java</url>
-          <line>62</line>
+          <line>60</line>
           <properties />
           <option name="timeStamp" value="112" />
         </line-breakpoint>
@@ -905,19 +892,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/ResourceTest/AuthorResourceTest.java</url>
-          <line>65</line>
+          <line>63</line>
           <properties />
           <option name="timeStamp" value="116" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/test/java/ResourceTest/AuthorResourceTest.java</url>
-          <line>32</line>
+          <line>30</line>
           <properties field="authorServiceImpl" class="ResourceTest.AuthorResourceTest" />
           <option name="timeStamp" value="107" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/test/java/ResourceTest/AuthorResourceTest.java</url>
-          <line>38</line>
+          <line>36</line>
           <properties field="authorDAO" class="ResourceTest.AuthorResourceTest" />
           <option name="timeStamp" value="117" />
         </line-breakpoint>
@@ -1237,16 +1224,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/resource/BookResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-api/2.5.0-b32/fa4f62a464d7d65b2a3d33035bb5606792273556/hk2-api-2.5.0-b32-sources.jar!/org/glassfish/hk2/extension/ServiceLocatorGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -1265,16 +1242,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ResourceTest/BookResourceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="57" column="22" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1379,16 +1346,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/api/AuthorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/AuthorServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -1403,10 +1360,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/api/AuthorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/resource/BookResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ResourceTest/BookResourceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-313">
+          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ResourceTest/AuthorResourceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
+        <state relative-caret-position="195">
+          <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
         </state>
       </provider>
     </entry>
